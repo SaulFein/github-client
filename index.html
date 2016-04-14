@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>GitHub Client</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="app.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+			<p>The ID is {{greeting.id}}</p>
+			<p>The this is my avatar <img src="{{greeting.avatar_url}}">"</p>
+      <p>The stars {{greeting.starred_url}}</p>
+      <p>The followers are {{greeting.followers_url.login}}</p>
+
+		</div>
+    <div ng-controller="Repos" >
+      <h4>Repos:</h4>
+
+      <ul>
+      <li ng-repeat="repo in repos"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
+    </ul>
+    </div>
+	</body>
+</html>
