@@ -7,19 +7,39 @@
 	</head>
 
 	<body>
-		<div ng-controller="Hello">
-			<p>The ID is {{greeting.id}}</p>
-			<p>The this is my avatar <img src="{{greeting.avatar_url}}">"</p>
-      <p>The stars {{greeting.starred_url}}</p>
-      <p>The followers are {{greeting.followers_url.login}}</p>
-
+		<div ng-controller="Main">
+			<p>The ID is {{main.login}}</p>
+			<p>The this is my avatar <img src="{{main.avatar_url}}"></p>
+      <p>The followers are {{main.followers_url.login}}</p>
 		</div>
+
     <div ng-controller="Repos" >
       <h4>Repos:</h4>
-
       <ul>
       <li ng-repeat="repo in repos"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
-    </ul>
+      </ul>
     </div>
+
+    <div ng-controller="Stars" >
+      <h4>Starred Repos:</h4>
+      <ul>
+      <li ng-repeat="repo in stars"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
+      </ul>
+    </div>
+
+    <div ng-controller="Followers" >
+      <h4>Followers:</h4>
+      <ul>
+      <li ng-repeat="people in followers"><a href={{people.html_url}}>{{people.login}}</a> </li>
+      </ul>
+    </div>
+
+    <div ng-controller="Following" >
+      <h4>Following:</h4>
+      <ul>
+      <li ng-repeat="people in following"><a href={{people.html_url}}>{{people.login}}</a> </li>
+      </ul>
+    </div>
+
 	</body>
 </html>
