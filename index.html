@@ -2,44 +2,46 @@
 <html ng-app>
 	<head>
 		<title>GitHub Client</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    	<script src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="foundation.min.css">
+
 	</head>
 
 	<body>
 		<div ng-controller="Main">
-			<p>The ID is {{main.login}}</p>
-			<p>The this is my avatar <img src="{{main.avatar_url}}"></p>
-      <p>The followers are {{main.followers_url.login}}</p>
+			<p id="username">{{main.login}}</p>
+			<img src="{{main.avatar_url}}" class="thumbnail"></p>
 		</div>
 
-    <div ng-controller="Repos" >
+    <div class = "row medium-unstack" ng-controller="Repos" >
       <h4>Repos:</h4>
       <ul>
-      <li ng-repeat="repo in repos"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
+      <li class="small-2 large-4 columns" ng-repeat="repo in repos"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
       </ul>
     </div>
 
-    <div ng-controller="Stars" >
+    <div class = "row medium-unstack" ng-controller="Stars" >
       <h4>Starred Repos:</h4>
       <ul>
-      <li ng-repeat="repo in stars"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
+      <li class="small-2 large-4 columns" ng-repeat="repo in stars"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
       </ul>
     </div>
 
-    <div ng-controller="Followers" >
+    <div class = "row medium-unstack" ng-controller="Followers" >
       <h4>Followers:</h4>
       <ul>
-      <li ng-repeat="people in followers"><a href={{people.html_url}}>{{people.login}}</a> </li>
+      <li class="small-2 large-4 columns" ng-repeat="people in followers"><a href={{people.html_url}}>{{people.login}}</a> </li>
       </ul>
     </div>
 
-    <div ng-controller="Following" >
+    <div id="bottom" class = "row medium-unstack" ng-controller="Following" >
       <h4>Following:</h4>
       <ul>
-      <li ng-repeat="people in following"><a href={{people.html_url}}>{{people.login}}</a> </li>
+      <li class="small-2 large-4 columns" ng-repeat="people in following"><a href={{people.html_url}}>{{people.login}}</a> </li>
       </ul>
     </div>
-
+		<hr>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+			<script src="app.js"></script>
 	</body>
 </html>

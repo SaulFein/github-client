@@ -1,0 +1,17 @@
+body {
+  background: #C0C0C0 !important;
+}
+
+#username {
+  text-align: center;
+}
+
+.thumbnail {
+  display: block;
+  margin: auto;
+  max-width: 25%;
+}
+
+#bottom {
+  padding-bottom: : 5%;
+}
