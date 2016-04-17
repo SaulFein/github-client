@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>GitHub Client</title>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script> -->
+    	<!-- <script src="index.js"></script> -->
+	</head>
+
+	<body>
+		<div ng-controller="Main">
+			<p>The ID is {{main.login}}</p>
+			<p>The this is my avatar <img src="{{main.avatar_url}}"></p>
+      <p>The followers are {{main.followers_url.login}}</p>
+		</div>
+
+    <div ng-controller="Repos" >
+      <h4>Repos:</h4>
+      <ul>
+      <li ng-repeat="repo in repos"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
+      </ul>
+    </div>
+
+    <div ng-controller="Stars" >
+      <h4>Starred Repos:</h4>
+      <ul>
+      <li ng-repeat="repo in stars"><a href={{repo.html_url}}>{{repo.name}}</a> </li>
+      </ul>
+    </div>
+
+    <div ng-controller="Followers" >
+      <h4>Followers:</h4>
+      <ul>
+      <li ng-repeat="people in followers"><a href={{people.html_url}}>{{people.login}}</a> </li>
+      </ul>
+    </div>
+
+    <div ng-controller="Following" >
+      <h4>Following:</h4>
+      <ul>
+      <li ng-repeat="people in following"><a href={{people.html_url}}>{{people.login}}</a> </li>
+      </ul>
+    </div>
+		<script src="bundle.js"></script>
+	</body>
+</html>

@@ -1,3 +1,7 @@
+const angular = require('angular');
+require("!style!css!./../style.css");
+
+
 function Main($scope, $http) {
     $http.get('https://api.github.com/users/saulfein').
         success(function(data) {
